@@ -33,14 +33,13 @@ delta_name = ['^', '<', 'v', '>']
 
 def search(grid,init,goal,cost):
 	take = [0, init[0], init[1]]
+	iteration = 1
+	print('Iteration : ', iteration)
 	print('Take : ', take)
 	open_cell = []
 	path = 'FAIL'
-	iteration = 1
 
 	while True:
-		print('Iteration : ', iteration)
-
 		if (take[1] == goal[0]) and (take[2] == goal[1]):
 			print('SUCCESS')
 			path = take
@@ -59,11 +58,12 @@ def search(grid,init,goal,cost):
 
 		open_cell.sort()
 		print('Open Cells : ', open_cell)
+		print()
+		iteration += 1
+		print('Iteration : ', iteration)
 		take = open_cell[0]
 		print('Take : ', take)
 		open_cell.pop(0)
-
-		iteration += 1
 
 	return path
 
