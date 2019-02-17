@@ -86,13 +86,13 @@ def search(grid,init,goal,cost):
  #         [2 2 0 2 0 2]
  #         [2 2 0 2 0 2]
  #         [2 2 0 2 0 2]]
+    # tracing the path backwards from the goal destination
     while (x != init[0]) or (y != init[1]):
         x2 = x - delta[action[x][y]][0]
         y2 = y - delta[action[x][y]][1]
         path[x2][y2] = delta_name[action[x][y]]
         x = x2
         y = y2
-
 
     return path # make sure you return the shortest path
 
