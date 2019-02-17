@@ -17,7 +17,6 @@
 # You may assume that all test cases for this function
 # will have a path from init to goal.
 # ----------
-import numpy as np
 
 grid = [[0, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
@@ -96,4 +95,4 @@ def search(grid,init,goal,cost):
 
     return path # make sure you return the shortest path
 
-print(np.array(search(grid,init,goal,cost)))
+print(search(grid,init,goal,cost))
