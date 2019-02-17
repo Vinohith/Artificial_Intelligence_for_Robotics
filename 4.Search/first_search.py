@@ -49,7 +49,8 @@ def search(grid,init,goal,cost):
 		for direction in delta:
 			cell = [take[0]+cost, take[1]+direction[0], take[2]+direction[1]]
 			if ((cell[1] > -1) and (cell[1] < len(grid))) and ((cell[2] > -1) and cell[2] < len(grid[0])) and (grid[cell[1]][cell[2]] == 0):
-				open_cell.append(cell)
+				if cell not in open_cell:
+					open_cell.append(cell)
 
 		grid[take[1]][take[2]] = 2
 
