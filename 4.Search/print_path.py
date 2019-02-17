@@ -75,7 +75,7 @@ def search(grid,init,goal,cost):
                             g2 = g + cost
                             open.append([g2, x2, y2])
                             closed[x2][y2] = 1
-                            action[x2][y2] = i
+                            action[x2][y2] = i  # to memorize the action taken
 
     path = [[' ' for row in range(len(grid[0]))] for col in range(len(grid))]
     x = goal[0]
