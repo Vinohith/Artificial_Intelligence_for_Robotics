@@ -50,6 +50,8 @@ def search(grid,init,goal,cost,heuristic):
     g = 0
     f = g + heuristic[x][y]
 
+    # the f parameter should always be in the first because the sorting is based on 
+    # this parameter and least f value should be selected in case of multiple options
     open = [[f, g, x, y]]
 
     found = False  # flag that is set when search is complete
@@ -80,7 +82,7 @@ def search(grid,init,goal,cost,heuristic):
                     if x2 >= 0 and x2 < len(grid) and y2 >=0 and y2 < len(grid[0]):
                         if closed[x2][y2] == 0 and grid[x2][y2] == 0:
                             g2 = g + cost
-                            f2 = f + heuristic[x2][y2]
+                            f2 = g2 + heuristic[x2][y2]
                             open.append([f2, g2, x2, y2])
                             closed[x2][y2] = 1
 
