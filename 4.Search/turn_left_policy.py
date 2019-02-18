@@ -95,8 +95,8 @@ def optimum_policy2D(grid,init,goal,cost):
                                     policy[orientation][x][y] = action_name[i]
                                     change = True
 
-    x =           init[0]
-    y =           init[1]
+    x = init[0]
+    y = init[1]
     orientation = init[2]
     policy2D[x][y] = policy[orientation][x][y]
 
